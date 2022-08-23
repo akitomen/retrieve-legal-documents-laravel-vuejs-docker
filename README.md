@@ -1,4 +1,4 @@
-# SONARWORKS DOCUMENTS TEST GUIDANCE
+#  GUIDANCE
 
 ## Project short introduction
 
