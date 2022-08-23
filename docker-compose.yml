@@ -1,0 +1,30 @@
+version: '2'
+services:
+  webserver:
+    image: nginx:alpine
+    volumes:
+      - ./:/var/www
+      - ./devops/nginx/conf.d/:/etc/nginx/conf.d/
+    ports:
+      - 8080:80
+  app:
+    build:
+      context: .
+      dockerfile: ./devops/php/Dockerfile
+    volumes:
+      - ./:/var/www
+    working_dir: /var/www
+    depends_on:
+      - db
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_DATABASE=sonarworks_db
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pass
+    ports:
+      - 3388:3306
+    volumes:
+      - ./docker-volumes-data/db:/var/lib/database

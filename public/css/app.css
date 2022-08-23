@@ -1,0 +1,532 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-SemiBold.eot');
+    src: url('../fonts/Inter-SemiBold.eot?#iefix') format('embedded-opentype'), url('../fonts/Inter-SemiBold.woff2') format('woff2'), url('../fonts/Inter-SemiBold.woff') format('woff'), url('../fonts/Inter-SemiBold.ttf') format('truetype'), url('../fonts/Inter-SemiBold.svg#Inter-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Regular.eot');
+    src: url('../fonts/Inter-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Inter-Regular.woff2') format('woff2'), url('../fonts/Inter-Regular.woff') format('woff'), url('../fonts/Inter-Regular.ttf') format('truetype'), url('../fonts/Inter-Regular.svg#Inter-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a,
+span,
+p,
+strong,
+ul li,
+ol li{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+}
+.default-container {
+    max-width: 1536px;
+    margin: auto;
+}
+h1, h2, h3 {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 32px;
+    letter-spacing: -0.5px;
+    color: #000000;
+}
+h1 {
+    font-size: 24px;
+    margin-bottom: 64px;
+}
+h2 {
+    font-size: 22px;
+}
+h3 {
+    font-size: 20px;
+}
+.header {
+    background-color: #000000;
+    height: 96px;
+}
+.header a {
+    color: #FFFFFF;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+}
+.header a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #FFFFFF;
+    -webkit-transition: width 0.3s ease-out;
+    -o-transition: width 0.3s ease-out;
+    transition: width 0.3s ease-out;
+}
+.header a:hover:after {
+    width: 100%;
+}
+.header a:focus:after {
+    width: 100%;
+}
+.header a.logo:after {
+    display: none;
+}
+.header-container {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.header-container__home {
+    height: 100%;
+    padding: 16px 83px 16px 16px;
+    border-right: 1px solid #313335;
+}
+.header-container__home a {
+    font-weight: 600;
+}
+.header-container__menu {
+    height: 100%;
+    padding: 16px;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+.header-container__menu a {
+    color: #96989C;
+}
+.header-container__menu a.active {
+    color: #FFFFFF;
+}
+.header-container__logo {
+    height: 100%;
+    padding: 16px 32px 16px 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-left: 1px solid #313335;
+}
+@media (max-width: 380px) {
+    .header-container__home {
+        padding: 16px;
+    }
+}
+.main-container {
+    min-height: inherit;
+    border-left: 1px solid #D8D9DA;
+    border-right: 1px solid #D8D9DA;
+}
+.main-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.main-list__item {
+    padding-top: 17px;
+    padding-left: 18px;
+    padding-bottom: 46px;
+    border-bottom: 1px solid #D8D9DA;
+}
+.main-list__item_small {
+    padding-bottom: 17px;
+}
+.main-list__item_small b {
+    font-size: 15px;
+    margin: 0 5px;
+}
+@media (max-width: 768px) {
+    .main-list__item_small a {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: unset !important;
+        -ms-flex-align: unset !important;
+        align-items: unset !important;
+        position: relative;
+    }
+    .main-list__item_small a:after {
+        position: absolute;
+        top: 50%;
+        right: 11px;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+}
+.main-list__item_small a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.main-list__item:last-child {
+    border: none;
+}
+.main-list__link {
+    position: relative;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.5px;
+    color: #000000;
+    text-decoration: none;
+}
+.main-list__link::after {
+    content: '→';
+}
+.main-list__link:visited {
+    color: #000000;
+}
+.main-list__link:hover {
+    color: #857878;
+}
+.main {
+    min-height: calc(100vh - 96px - 96px);
+}
+.main .page {
+    padding-top: 16px;
+    padding-left: 16px;
+}
+.main .page .s-content {
+    max-width: 720px;
+}
+.main .page .s-content a {
+    color: #000000;
+}
+.main .page .s-content a:hover {
+    color: #636569;
+}
+.main .page .s-content p,
+.main .page .s-content strong,
+.main .page .s-content h2 {
+    color: #636569;
+    margin-bottom: 8px;
+}
+.main .page .s-content h2,
+.main .page .s-content h3 {
+    font-weight: 600;
+    margin: 16px 0px;
+    color: #000000;
+}
+.main .page .s-content ol,
+.main .page .s-content ul {
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+}
+.main .page .s-content ol li,
+.main .page .s-content ul li{
+    margin-bottom: 8px;
+    color: #636569;
+}
+.main .page .s-content table p{
+    color: #000000;
+}
+.main .page .s-content table th,
+.main .page .s-content table td {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+}
+.main .page .s-content ol li:last-child,
+.main .page .s-content ul li:last-child{
+    margin-bottom: 0px;
+}
+.main .page .s-content ol li strong,
+.main .page .s-content ul li strong{
+    color: #636669;
+}
+.main .page .s-content ol li {
+    list-style-type: decimal;
+}
+.main .page .s-content ul li {
+    list-style-type: circle;
+}
+.main .page .s-content table {
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
+    border: 1px solid #d8d9da;
+}
+.page-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.page-btn__home {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 5px 5px 5px 30px;
+    position: relative;
+    margin-bottom: 8px;
+}
+.page-btn__home:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+.page-btn__home::before {
+    content: '←';
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.main .page .s-content table th{
+    border: 1px solid #d8d9da;
+}
+.main .page .s-content table td{
+    padding: 16px;
+    border: 1px solid #d8d9da;
+}
+@media (max-width: 768px) {
+    .main .page {
+        padding-right: 16px;
+    }
+    .main .page .s-content {
+        max-width: unset;
+    }
+}
+.footer {
+    height: 96px;
+    background: #000000;
+}
+.footer-container {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+.footer .copyright {
+    color: #96989C;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+}
+.loader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-height: inherit;
+}
+.lds-dual-ring {
+    display: block;
+    width: 80px;
+    height: 80px;
+}
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #000000;
+    border-color: #000000 transparent #fff transparent;
+    -webkit-animation: lds-dual-ring 1.2s linear infinite;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+@-webkit-keyframes lds-dual-ring {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes lds-dual-ring {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
